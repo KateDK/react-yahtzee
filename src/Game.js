@@ -29,11 +29,9 @@ class Game extends Component {
         chance: undefined,
       },
     };
-    this.roll = this.roll.bind(this);
-    this.doScore = this.doScore.bind(this);
   }
 
-  roll(evt) {
+  roll = (evt) => {
     // roll dice whose indexes are in reroll
     this.setState((st) => ({
       dice: st.dice.map((d, i) =>
@@ -42,7 +40,7 @@ class Game extends Component {
       locked: st.rollsLeft > 1 ? st.locked : Array(NUM_DICE).fill(true),
       rollsLeft: st.rollsLeft - 1,
     }));
-  }
+  };
 
   toggleLocked = (idx) => {
     // toggle whether idx is in locked or not
