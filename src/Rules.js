@@ -58,10 +58,10 @@ class SumDistro extends Rule {
 /** Check if full house (3-of-kind and 2-of-kind) */
 
 class FullHouse extends Rule {
-  // TODO
   evalRoll = (dice) => {
-    if (this.freq(dice).length === 2) {
-      if (this.freq(dice)[0] === 2 || this.freq(dice)[0] === 3) {
+    const freqs = this.freq(dice);
+    if (freqs.length === 2) {
+      if (freqs[0] === 2 || freqs[0] === 3) {
         return this.score;
       }
     }
