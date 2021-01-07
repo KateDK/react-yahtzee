@@ -55,7 +55,7 @@ class Game extends Component {
     }));
   };
 
-  doScore(rulename, ruleFn) {
+  doScore = (rulename, ruleFn) => {
     // evaluate this ruleFn with the dice and score this rulename
     this.setState((st) => ({
       scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
@@ -63,7 +63,7 @@ class Game extends Component {
       locked: Array(NUM_DICE).fill(false),
     }));
     this.roll();
-  }
+  };
 
   render() {
     return (
